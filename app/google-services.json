@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "231781494553",
+    "project_id": "gaseagua-1",
+    "storage_bucket": "gaseagua-1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231781494553:android:801afeaee86647b071df88",
+        "android_client_info": {
+          "package_name": "com.example.gaseagua"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdTsUGSsqCjExDQr_y2K3SFSnLAlPreoc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
