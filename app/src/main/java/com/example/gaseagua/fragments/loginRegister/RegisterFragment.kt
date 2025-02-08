@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.gaseagua.R
 import com.example.gaseagua.data.User
 import com.example.gaseagua.databinding.FragmentRegisterBinding
@@ -57,6 +58,7 @@ class RegisterFragment: Fragment() {
                     }
                     is Resource.Success ->{
                         Log.d("test",it.data.toString())
+                        findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
                     }
                     is Resource.Error ->{
                         Log.e(TAG,it.message.toString())
