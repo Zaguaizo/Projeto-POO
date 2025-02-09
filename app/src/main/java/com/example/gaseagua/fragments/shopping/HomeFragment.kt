@@ -10,8 +10,7 @@ import com.example.gaseagua.adapters.HomeViewpagerAdapter
 import com.example.gaseagua.databinding.FragmentHomeBinding
 import com.example.gaseagua.fragments.categories.GasFragment
 import com.example.gaseagua.fragments.categories.MainCategoryFragment
-import com.example.gaseagua.fragments.categories.WaterFragment
-import com.google.android.material.tabs.TabLayout
+import com.example.gaseagua.fragments.categories.AguaFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeFragment: Fragment(R.layout.fragment_home) {
@@ -31,7 +30,7 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
 
         val categoriesFragments = arrayListOf<Fragment>(
             MainCategoryFragment(),
-            WaterFragment(),
+            AguaFragment(),
             GasFragment(),
         )
 

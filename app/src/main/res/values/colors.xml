@@ -10,4 +10,7 @@
     <color name="gray">#808080</color>
     <color name="dark_blue">#002366</color>
     <color name="light_red">#FF7F7F</color>
+    <color name="g_card_background">#FAFDFF</color>
+    <color name="g_blue_gray200">#97AABD</color>
+
 </resources>
