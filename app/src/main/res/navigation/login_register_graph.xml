@@ -5,18 +5,7 @@
     android:id="@+id/login_register_graph"
     app:startDestination="@id/introFragment">
 
-    <fragment
-        android:id="@+id/introductionFragment"
-        android:name="com.example.gaseagua.fragments.loginRegister.IntroductionFragment"
-        android:label="IntroductionFragment"
-        tools:layout="@layout/fragment_introduction">
-        <action
-            android:id="@+id/action_introductionFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-        <action
-            android:id="@+id/action_introductionFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
-    </fragment>
+
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.gaseagua.fragments.loginRegister.RegisterFragment"
@@ -26,7 +15,7 @@
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment"
-            app:popUpTo="@id/introductionFragment" />
+            app:popUpTo="@id/introFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -42,9 +31,13 @@
         android:name="com.example.gaseagua.fragments.loginRegister.IntroFragment"
         android:label="IntroFragment"
         tools:layout="@layout/fragment_intro">
+
         <action
-            android:id="@+id/action_introFragment_to_introductionFragment"
-            app:destination="@id/introductionFragment" />
+            android:id="@+id/action_introFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_introFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
     </fragment>
 
 </navigation>

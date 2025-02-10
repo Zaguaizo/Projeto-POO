@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#002366"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="false">
 
     <!-- Logo -->
     <ImageView
@@ -32,15 +32,15 @@
         app:layout_constraintTop_toBottomOf="@id/logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/buttonComerciante"
+        app:layout_constraintBottom_toTopOf="@id/btnLogin"
         android:layout_marginBottom="32dp"/>
 
     <!-- Botão "Sou comerciante" -->
     <Button
-        android:id="@+id/buttonComerciante"
+        android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Sou comerciante"
+        android:text="Login"
         android:textColor="#000000"
         android:backgroundTint="@android:color/white"
         android:padding="16dp"
@@ -60,18 +60,18 @@
         android:layout_height="wrap_content"
         android:text="Ou"
         android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/buttonComerciante"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/buttonCliente"
+        app:layout_constraintBottom_toTopOf="@id/buttonCadastro"
         android:layout_marginBottom="8dp"/>
 
     <!-- Botão "Sou cliente" -->
     <Button
-        android:id="@+id/buttonCliente"
+        android:id="@+id/buttonCadastro"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Sou cliente"
+        android:text="Cadastrar"
         android:textColor="#000000"
         android:backgroundTint="@android:color/white"
         android:padding="16dp"
