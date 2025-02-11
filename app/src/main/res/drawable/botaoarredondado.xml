@@ -1,0 +1,13 @@
+<!-- res/drawable/botao_arredondado.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Cor de fundo do botão -->
+    <solid android:color="#002366" /> <!-- Substitua pela cor desejada -->
+
+    <!-- Cantos arredondados -->
+    <corners android:radius="24dp" /> <!-- Ajuste o valor para o raio desejado -->
+
+    <!-- Borda (opcional) -->
+    <stroke
+        android:width="2dp"
+        android:color="#FFFFFF" /> <!-- Substitua pela cor da borda -->
+</shape>

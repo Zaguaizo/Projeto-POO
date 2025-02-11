@@ -10,6 +10,7 @@ import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gaseagua.R
@@ -18,6 +19,7 @@ import com.example.gaseagua.adapters.BestProductAdapter
 import com.example.gaseagua.adapters.SpecialProductsAdapter
 import com.example.gaseagua.databinding.FragmentMainCategoryBinding
 import com.example.gaseagua.util.Resource
+import com.example.gaseagua.util.showBottomNavigationView
 import com.example.gaseagua.viewmodel.MainCategoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -47,6 +49,20 @@ class MainCategoryFragment: Fragment(R.layout.fragment_main_category) {
         setupSpecialProducts()
         setupBestDealsRv()
         setupBestProductsRv()
+
+        specialProductsAdapter.onClick={
+            val b = Bundle().apply { putParcelable("product",it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
+        }
+        bestProductsAdapter.onClick={
+            val b = Bundle().apply { putParcelable("product",it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
+        }
+        bestDealsAdapter.onClick={
+            val b = Bundle().apply { putParcelable("product",it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
+        }
+
         lifecycleScope.launchWhenStarted {
             viewModel.specialProducts.collectLatest {
                 Log.d(TAG, "Estado do Flow: $it")
@@ -151,5 +167,10 @@ class MainCategoryFragment: Fragment(R.layout.fragment_main_category) {
             adapter = specialProductsAdapter
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        showBottomNavigationView()
     }
 }

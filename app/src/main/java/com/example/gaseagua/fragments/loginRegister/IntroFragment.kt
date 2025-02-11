@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.gaseagua.R
 import com.example.gaseagua.databinding.FragmentIntroBinding
-import com.example.gaseagua.databinding.FragmentIntroductionBinding
+
 
 class IntroFragment: Fragment(R.layout.fragment_intro) {
     private lateinit var binding: FragmentIntroBinding
