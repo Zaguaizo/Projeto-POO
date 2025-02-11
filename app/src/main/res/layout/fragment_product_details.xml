@@ -115,7 +115,6 @@
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="135dp"
             android:layout_marginTop="135dp"
-            android:background="@drawable/botaoarredondado"
             android:stateListAnimator="@null"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

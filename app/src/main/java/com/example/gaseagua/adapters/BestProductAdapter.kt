@@ -12,21 +12,21 @@ import com.bumptech.glide.Glide
 import com.example.gaseagua.data.Product
 import com.example.gaseagua.databinding.BestDealsRvItemBinding
 import com.example.gaseagua.databinding.ProductRvItemBinding
+import com.example.gaseagua.helper.getProductPrice
 
 class BestProductAdapter: RecyclerView.Adapter<BestProductAdapter.BestProductViewHolder>() {
     inner class BestProductViewHolder(private val binding: ProductRvItemBinding): ViewHolder(binding.root){
         fun bind(product: Product) {
             binding.apply {
-                Glide.with(itemView).load(product.images[0]).into(imgProduct)
-                product.offer?.let{
-                    val remainingPricePercentage = 1f - it
-                    val priceAfterOffer = remainingPricePercentage * product.price
-                    tvNewPrice.text = "R$ ${String.format("%.2f",priceAfterOffer)}"
-                    tvPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
-                }
+
+                val priceAfterOffer = product.offer.getProductPrice(product.price)
+                tvNewPrice.text = "R$ ${String.format("%.2f",priceAfterOffer)}"
+                tvPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+
                 if(product.offer == null)
                     tvNewPrice.visibility = View.INVISIBLE
 
+                Glide.with(itemView).load(product.images[0]).into(imgProduct)
                 tvPrice.text = "R$ ${product.price}"
                 tvName.text = product.name
             }

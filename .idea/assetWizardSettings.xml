@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/close/baseline_close_24.xml" />
+                                      <entry key="url" value="file:/$PROJECT_DIR$/../AppData/Local/Android/Sdk/icons/material/materialicons/add_location/baseline_add_location_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -33,8 +33,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="baseline_close_24" />
-                            <entry key="sourceFile" value="C:\Users\swenc\Downloads\water-svgrepo-com.svg" />
+                            <entry key="outputName" value="baseline_add_location_24" />
+                            <entry key="sourceFile" value="C:\Users\swenc\Downloads\plus-box-fill-svgrepo-com.svg" />
                           </map>
                         </option>
                       </PersistentState>
