@@ -7,23 +7,24 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/iconegaseagua"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/iconegaseagua"
         android:supportsRtl="true"
         android:theme="@style/Theme.GasEAgua"
         tools:targetApi="35">
         <activity
             android:name=".activities.ShoppingActivity"
             android:exported="false"
-            android:theme="@style/Theme.GasEAgua"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
             />
         <activity
             android:name=".activities.LoginRegisterActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.GasEAgua"
-            >
+            android:windowSoftInputMode="adjustResize">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

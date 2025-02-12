@@ -12,7 +12,6 @@ import com.example.gaseagua.data.Address
 import com.example.gaseagua.databinding.AddressRvItemBinding
 
 class AddressAdapter: Adapter<AddressAdapter.AddressViewHolder>() {
-
     inner class AddressViewHolder(val binding: AddressRvItemBinding): ViewHolder(binding.root){
         fun bind(address: Address, isSelected: Boolean) {
             binding.apply {
@@ -26,7 +25,6 @@ class AddressAdapter: Adapter<AddressAdapter.AddressViewHolder>() {
         }
 
     }
-
     private val diffUtil = object: DiffUtil.ItemCallback<Address>(){
         override fun areItemsTheSame(oldItem: Address, newItem: Address): Boolean {
             return oldItem.addressTitle == newItem.addressTitle && oldItem.fullName == newItem.fullName
@@ -36,7 +34,6 @@ class AddressAdapter: Adapter<AddressAdapter.AddressViewHolder>() {
            return oldItem == newItem
         }
     }
-
     val differ = AsyncListDiffer(this, diffUtil)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddressViewHolder {
@@ -46,7 +43,6 @@ class AddressAdapter: Adapter<AddressAdapter.AddressViewHolder>() {
             )
         )
     }
-
     var selectedAddress = -1
     override fun onBindViewHolder(holder: AddressViewHolder, position: Int) {
         val address = differ.currentList[position]
@@ -59,17 +55,13 @@ class AddressAdapter: Adapter<AddressAdapter.AddressViewHolder>() {
             onClick?.invoke(address)
         }
     }
-
     init {
         differ.addListListener { _, _ ->
             notifyItemChanged(selectedAddress)
         }
     }
-
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
-
     var onClick: ((Address) -> Unit)? = null
-
 }

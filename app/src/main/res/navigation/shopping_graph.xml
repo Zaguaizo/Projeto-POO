@@ -10,9 +10,16 @@
         android:name="com.example.gaseagua.fragments.shopping.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile">
+
         <action
-            android:id="@+id/action_profileFragment_to_addressFragment"
-            app:destination="@id/addressFragment" />
+            android:id="@+id/action_profileFragment_to_userAccountFragment"
+            app:destination="@id/userAccountFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_allOrdersFragment"
+            app:destination="@id/allOrdersFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_billingFragment"
+            app:destination="@id/billingFragment" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
@@ -57,7 +64,13 @@
         android:id="@+id/addressFragment"
         android:name="com.example.gaseagua.fragments.shopping.AddressFragment"
         android:label="AddressFragment"
-        tools:layout="@layout/fragment_address"/>
+        tools:layout="@layout/fragment_address">
+        <argument
+            android:name="address"
+            app:argType="com.example.gaseagua.data.Address"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
     <fragment
         android:id="@+id/billingFragment"
         android:name="com.example.gaseagua.fragments.shopping.BillingFragment"
@@ -72,5 +85,31 @@
         <argument
             android:name="products"
             app:argType="com.example.gaseagua.data.CartProduct[]" />
+        <argument
+            android:name="payment"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/userAccountFragment"
+        android:name="com.example.gaseagua.fragments.user.UserAccountFragment"
+        android:label="UserAccountFragment"
+        tools:layout="@layout/fragment_user_account"/>
+    <fragment
+        android:id="@+id/allOrdersFragment"
+        android:name="com.example.gaseagua.fragments.user.AllOrdersFragment"
+        android:label="AllOrdersFragment"
+        tools:layout="@layout/fragment_orders">
+        <action
+            android:id="@+id/action_allOrdersFragment_to_orderDetailsFragment"
+            app:destination="@id/orderDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailsFragment"
+        android:name="com.example.gaseagua.fragments.user.OrderDetailsFragment"
+        android:label="OrderDetailsFragment"
+        tools:layout="@layout/fragment_order_detail">
+        <argument
+            android:name="order"
+            app:argType="com.example.gaseagua.data.order.Order" />
     </fragment>
 </navigation>

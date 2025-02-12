@@ -19,21 +19,14 @@ import kotlinx.coroutines.flow.collectLatest
 
 @AndroidEntryPoint
 class ShoppingActivity : AppCompatActivity() {
-
     val binding by lazy {
         ActivityShoppingBinding.inflate(layoutInflater)
     }
-
-
     val viewModel by viewModels<CartViewModel>()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
         val navController = findNavController(R.id.shoppingHostFragment)
         binding.bottomNavigation.setupWithNavController(navController)
-
-
     }
 }
