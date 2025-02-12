@@ -12,7 +12,7 @@
 
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarCart"
+            android:id="@+id/toolbarCarrinho"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imgCloseCart"
+                    android:id="@+id/imageFecharCarrinho"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/baseline_close_24"
@@ -45,9 +45,9 @@
                     android:text="Carrinho"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@id/imgCloseCart"
-                    app:layout_constraintStart_toStartOf="@id/imgCloseCart"
-                    app:layout_constraintTop_toTopOf="@id/imgCloseCart" />
+                    app:layout_constraintBottom_toBottomOf="@id/imageFecharCarrinho"
+                    app:layout_constraintStart_toStartOf="@id/imageFecharCarrinho"
+                    app:layout_constraintTop_toTopOf="@id/imageFecharCarrinho" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -76,25 +76,25 @@
             app:layout_constraintGuide_percent="0.68" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvCart"
+            android:id="@+id/rvCarrinho"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="5dp"
             app:layout_constraintBottom_toTopOf="@id/bottomGuideLine"
             app:layout_constraintEnd_toEndOf="@id/rightGuideLine"
             app:layout_constraintStart_toStartOf="@id/leftGuideLine"
-            app:layout_constraintTop_toBottomOf="@id/progressbarCart"
+            app:layout_constraintTop_toBottomOf="@id/progressbarCarrinho"
             tools:listitem="@layout/cart_product_item" />
 
         <com.google.android.material.progressindicator.LinearProgressIndicator
-            android:id="@+id/progressbarCart"
+            android:id="@+id/progressbarCarrinho"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:indeterminate="true"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbarCart" />
+            app:layout_constraintTop_toBottomOf="@id/toolbarCarrinho" />
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/totalBoxContainer"
             android:layout_width="0dp"
@@ -121,7 +121,7 @@
 
 
             <TextView
-                android:id="@+id/tvTotalPrice"
+                android:id="@+id/tvPreçoTotal"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -139,7 +139,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
-            android:id="@+id/buttonCheckout"
+            android:id="@+id/botaoCheckout"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:text="Comprar"
@@ -153,13 +153,13 @@
             android:layout_marginTop="50dp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layoutCartEmpty"
+            android:id="@+id/clCarrinhoVazio"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone">
 
             <ImageView
-                android:id="@+id/imageEmptyBox"
+                android:id="@+id/imageCaixaVazia"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginBottom="130dp"
@@ -178,9 +178,9 @@
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/imageEmptyBox"
-                app:layout_constraintStart_toStartOf="@id/imageEmptyBox"
-                app:layout_constraintEnd_toEndOf="@id/imageEmptyBox"/>
+                app:layout_constraintTop_toBottomOf="@id/imageCaixaVazia"
+                app:layout_constraintStart_toStartOf="@id/imageCaixaVazia"
+                app:layout_constraintEnd_toEndOf="@id/imageCaixaVazia"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

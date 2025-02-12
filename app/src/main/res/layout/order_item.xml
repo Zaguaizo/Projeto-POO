@@ -13,14 +13,14 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageOrderState"
+            android:id="@+id/imageEstadoDoPedido"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_gravity="center"
             android:src="@color/black" />
 
         <TextView
-            android:id="@+id/tvOrderId"
+            android:id="@+id/tvIDDoPedido"
             android:textColor="@color/black"
             android:textAllCaps="false"
             android:textStyle="bold"
@@ -39,7 +39,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tvOrderDate"
+        android:id="@+id/tvDataDoPedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="@tools:sample/lorem" />

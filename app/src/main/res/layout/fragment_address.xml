@@ -16,7 +16,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageAddressClose"
+                android:id="@+id/imagemFechar"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:scaleType="centerInside"
@@ -27,16 +27,16 @@
                 app:tint="@color/black" />
 
             <TextView
-                android:id="@+id/tvPaymentMethods"
+                android:id="@+id/tvMetodoPagamento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="Endereço"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageAddressClose"
-                app:layout_constraintStart_toEndOf="@id/imageAddressClose"
-                app:layout_constraintTop_toTopOf="@+id/imageAddressClose" />
+                app:layout_constraintBottom_toBottomOf="@+id/imagemFechar"
+                app:layout_constraintStart_toEndOf="@id/imagemFechar"
+                app:layout_constraintTop_toTopOf="@+id/imagemFechar" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
@@ -52,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@id/toolbarAddresses" />
 
     <EditText
-        android:id="@+id/edAddressTitle"
+        android:id="@+id/editTituloEndereço"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginTop="15dp"
@@ -69,7 +69,7 @@
         app:layout_constraintTop_toBottomOf="@+id/topLine" />
 
     <EditText
-        android:id="@+id/edFullName"
+        android:id="@+id/editNomeCompleto"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginTop="15dp"
@@ -83,10 +83,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/edAddressTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/editTituloEndereço" />
 
     <EditText
-        android:id="@+id/ed_full_address"
+        android:id="@+id/editEndereçoCompleto"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
@@ -100,7 +100,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
-        app:layout_constraintTop_toBottomOf="@id/edFullName" />
+        app:layout_constraintTop_toBottomOf="@id/editNomeCompleto" />
 
     <LinearLayout
         android:id="@+id/linear"
@@ -110,10 +110,10 @@
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="@id/guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/edPhone">
+        app:layout_constraintTop_toBottomOf="@+id/editCelular">
 
         <EditText
-            android:id="@+id/edCity"
+            android:id="@+id/editCidade"
             android:layout_width="378dp"
             android:layout_height="45dp"
             android:layout_marginTop="10dp"
@@ -129,7 +129,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/edState"
+            android:id="@+id/editEstado"
             android:layout_width="378dp"
             android:layout_height="45dp"
             android:layout_marginStart="5dp"
@@ -146,7 +146,7 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/edPhone"
+        android:id="@+id/editCelular"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
@@ -161,7 +161,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/ed_full_address" />
+        app:layout_constraintTop_toBottomOf="@+id/editEndereçoCompleto" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -175,7 +175,7 @@
         app:layout_constraintVertical_bias="0.494">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonDelelte"
+            android:id="@+id/botaoDeletar"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_marginEnd="5dp"
@@ -190,7 +190,7 @@
             android:visibility="visible" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonSave"
+            android:id="@+id/botaoSalvar"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_marginStart="5dp"
@@ -206,7 +206,7 @@
     </LinearLayout>
 
     <ProgressBar
-        android:id="@+id/progressbarAddress"
+        android:id="@+id/progressbarEndereço"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="45dp"

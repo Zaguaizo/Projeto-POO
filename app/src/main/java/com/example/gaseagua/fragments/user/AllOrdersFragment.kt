@@ -42,18 +42,18 @@ class AllOrdersFragment : Fragment() {
             viewModel.allOrders.collectLatest {
                 when (it) {
                     is Resource.Loading -> {
-                        binding.progressbarAllOrders.visibility = View.VISIBLE
+                        binding.progressbarTodosOsPedidos.visibility = View.VISIBLE
                     }
                     is Resource.Success -> {
-                        binding.progressbarAllOrders.visibility = View.GONE
+                        binding.progressbarTodosOsPedidos.visibility = View.GONE
                         ordersAdapter.differ.submitList(it.data)
                         if (it.data.isNullOrEmpty()) {
-                            binding.tvEmptyOrders.visibility = View.VISIBLE
+                            binding.tvVazio.visibility = View.VISIBLE
                         }
                     }
                     is Resource.Error -> {
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
-                        binding.progressbarAllOrders.visibility = View.GONE
+                        binding.progressbarTodosOsPedidos.visibility = View.GONE
                     }
                     else -> Unit
                 }
@@ -68,7 +68,7 @@ class AllOrdersFragment : Fragment() {
     }
 
     private fun setupOrdersRv() {
-        binding.rvAllOrders.apply {
+        binding.rvTodosOsPedidos.apply {
             adapter = ordersAdapter
             layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         }

@@ -18,8 +18,8 @@ class AllOrdersAdapter : Adapter<AllOrdersAdapter.OrdersViewHolder>() {
     inner class OrdersViewHolder(private val binding: OrderItemBinding) : ViewHolder(binding.root) {
         fun bind(order: Order) {
             binding.apply {
-                tvOrderId.text = order.orderId.toString()
-                tvOrderDate.text = order.date
+                tvIDDoPedido.text = order.orderId.toString()
+                tvDataDoPedido.text = order.date
                 val resources = itemView.resources
 
                 val colorDrawable = when (getOrderStatus(order.orderStatus)) {
@@ -37,7 +37,7 @@ class AllOrdersAdapter : Adapter<AllOrdersAdapter.OrdersViewHolder>() {
                     }
                 }
 
-                imageOrderState.setImageDrawable(colorDrawable)
+                imageEstadoDoPedido.setImageDrawable(colorDrawable)
 
             }
         }

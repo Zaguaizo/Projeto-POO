@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarOrderDetails"
+            android:id="@+id/toolbarDetalhesPedido"
             android:layout_width="0dp"
             android:layout_height="?actionBarSize"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
@@ -23,7 +23,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageCloseOrder"
+                    android:id="@+id/imageFecharPedidos"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/baseline_close_24"
@@ -34,7 +34,7 @@
                     app:tint="@color/black" />
 
                 <TextView
-                    android:id="@+id/tvOrderId"
+                    android:id="@+id/tvIDDoPedido"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
@@ -43,7 +43,7 @@
                     android:textSize="20sp"
                     android:text="#1234567"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/imageCloseOrder"
+                    app:layout_constraintStart_toEndOf="@id/imageFecharPedidos"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -57,7 +57,7 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
             app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintTop_toBottomOf="@id/toolbarOrderDetails">
+            app:layout_constraintTop_toBottomOf="@id/toolbarDetalhesPedido">
 
             <com.shuhart.stepview.StepView
                 android:id="@+id/stepView"
@@ -86,7 +86,7 @@
 
 
         <TextView
-            android:id="@+id/tvShippingAddress"
+            android:id="@+id/tvEndereçoDeEntrega"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Endereço"
@@ -100,31 +100,31 @@
             app:drawableLeftCompat="@drawable/baseline_add_location_24" />
 
         <LinearLayout
-            android:id="@+id/linearAddress"
+            android:id="@+id/linearEndereço"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="@id/guideline1"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
-            app:layout_constraintTop_toBottomOf="@id/tvShippingAddress">
+            app:layout_constraintTop_toBottomOf="@id/tvEndereçoDeEntrega">
 
 
             <TextView
-                android:id="@+id/tvFullName"
+                android:id="@+id/tvNomeCompleto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nome completo"
                 android:textSize="13sp" />
 
             <TextView
-                android:id="@+id/tvAddress"
+                android:id="@+id/tvEndereço2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Endereço"
                 android:textSize="13sp" />
 
             <TextView
-                android:id="@+id/tvPhoneNumber"
+                android:id="@+id/tvCelular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Número de celular"
@@ -138,14 +138,14 @@
             android:layout_height="1sp"
             android:layout_marginTop="15dp"
             android:background="@color/g_blue_gray200"
-            app:layout_constraintTop_toBottomOf="@id/linearAddress"
+            app:layout_constraintTop_toBottomOf="@id/linearEndereço"
             app:layout_constraintStart_toStartOf="@id/guideline1"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
             android:backgroundTint="@color/g_blue_gray200"
             />
 
         <TextView
-            android:id="@+id/tvProducts"
+            android:id="@+id/tvProdutos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Produtos"
@@ -160,12 +160,12 @@
             android:drawablePadding="5dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvProducts"
+            android:id="@+id/rvProdutos"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="@id/line1"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
-            app:layout_constraintTop_toBottomOf="@id/tvProducts"
+            app:layout_constraintTop_toBottomOf="@id/tvProdutos"
             android:layout_marginTop="10dp"
             tools:listitem="@layout/billing_products_rv_item"
             />
@@ -176,7 +176,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="@id/guideline1"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
-            app:layout_constraintTop_toBottomOf="@id/rvProducts"
+            app:layout_constraintTop_toBottomOf="@id/rvProdutos"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="20dp"
@@ -199,7 +199,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
             <TextView
-                android:id="@+id/tvTotalPrice"
+                android:id="@+id/tvPreçoTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"

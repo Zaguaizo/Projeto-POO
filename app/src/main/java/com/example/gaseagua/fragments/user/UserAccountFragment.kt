@@ -38,7 +38,7 @@ class UserAccountFragment : Fragment() {
         imageActivityResultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
                 imageUri = it.data?.data
-                Glide.with(this).load(imageUri).into(binding.imageUser)
+                Glide.with(this).load(imageUri).into(binding.imageUsuario)
             }
     }
 
@@ -88,7 +88,7 @@ class UserAccountFragment : Fragment() {
             }
         }
 
-        binding.buttonSave.setOnClickListener {
+        binding.botaoSalvar.setOnClickListener {
             binding.apply {
                 val firstName = edFirstName.text.toString().trim()
                 val lastName = edLastName.text.toString().trim()
@@ -108,7 +108,7 @@ class UserAccountFragment : Fragment() {
 
     private fun showUserInformation(data: User) {
         binding.apply {
-            Glide.with(this@UserAccountFragment).load(data.imagePath).error(ColorDrawable(Color.BLACK)).into(imageUser)
+            Glide.with(this@UserAccountFragment).load(data.imagePath).error(ColorDrawable(Color.BLACK)).into(imageUsuario)
             edFirstName.setText(data.firstName)
             edLastName.setText(data.lastName)
             edEmail.setText(data.email)
@@ -118,24 +118,24 @@ class UserAccountFragment : Fragment() {
     private fun hideUserLoading() {
         binding.apply {
             progressbarAccount.visibility = View.GONE
-            imageUser.visibility = View.VISIBLE
+            imageUsuario.visibility = View.VISIBLE
             imageEdit.visibility = View.VISIBLE
             edFirstName.visibility = View.VISIBLE
             edLastName.visibility = View.VISIBLE
             edEmail.visibility = View.VISIBLE
-            buttonSave.visibility = View.VISIBLE
+            botaoSalvar.visibility = View.VISIBLE
         }
     }
 
     private fun showUserLoading() {
         binding.apply {
             progressbarAccount.visibility = View.VISIBLE
-            imageUser.visibility = View.INVISIBLE
+            imageUsuario.visibility = View.INVISIBLE
             imageEdit.visibility = View.INVISIBLE
             edFirstName.visibility = View.INVISIBLE
             edLastName.visibility = View.INVISIBLE
             edEmail.visibility = View.INVISIBLE
-            buttonSave.visibility = View.INVISIBLE
+            botaoSalvar.visibility = View.INVISIBLE
         }
     }
 }

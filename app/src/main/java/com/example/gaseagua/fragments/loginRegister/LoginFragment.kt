@@ -39,8 +39,8 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
 
         binding.apply{
             buttonLogin.setOnClickListener{
-                val email = editTextEmail.text.toString().trim()
-                val password = editTextSenha.text.toString()
+                val email = editEmail.text.toString().trim()
+                val password = editSenha.text.toString()
                 viewModel.login(email,password)
             }
             btnCadastrar.setOnClickListener{

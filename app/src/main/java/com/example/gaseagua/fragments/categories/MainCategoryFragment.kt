@@ -112,16 +112,16 @@ class MainCategoryFragment: Fragment(R.layout.fragment_main_category) {
                 Log.d(TAG, "Estado do Flow: $it")
                 when(it){
                     is Resource.Loading ->{
-                        binding.bestProductsProgressBar.visibility = View.VISIBLE
+                        binding.progressbarMelhoresProdutos.visibility = View.VISIBLE
                     }
                     is Resource.Success ->{
                         Log.d(TAG, "Produtos carregados: ${it.data?.size}")
                         bestProductsAdapter.differ.submitList(it.data)
-                        binding.bestProductsProgressBar.visibility = View.GONE
+                        binding.progressbarMelhoresProdutos.visibility = View.GONE
                     }
                     is Resource.Error ->{
                         Log.e(TAG, "Erro ao buscar produtos: ${it.message}")
-                        binding.bestProductsProgressBar.visibility = View.GONE
+                        binding.progressbarMelhoresProdutos.visibility = View.GONE
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                     }
                     else -> Unit
@@ -138,7 +138,7 @@ class MainCategoryFragment: Fragment(R.layout.fragment_main_category) {
 
     private fun setupBestProductsRv() {
         bestProductsAdapter = BestProductAdapter()
-        binding.RVBestProducts.apply {
+        binding.rvMelhoresProdutos2.apply {
             layoutManager = GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL,false)
             adapter = bestProductsAdapter
         }
@@ -146,7 +146,7 @@ class MainCategoryFragment: Fragment(R.layout.fragment_main_category) {
 
     private fun setupBestDealsRv() {
         bestDealsAdapter = BestDealsAdapter()
-        binding.RVBestDealsProducts.apply {
+        binding.rvProdutosMelhoresPreOs.apply {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,false)
             adapter = bestDealsAdapter
         }
@@ -162,7 +162,7 @@ class MainCategoryFragment: Fragment(R.layout.fragment_main_category) {
 
     private fun setupSpecialProducts() {
         specialProductsAdapter = SpecialProductsAdapter()
-        binding.rvSpecialProducts.apply {
+        binding.rvProdutosEspeciais.apply {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,false)
             adapter = specialProductsAdapter
         }

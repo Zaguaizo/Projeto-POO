@@ -34,7 +34,7 @@ class OrderDetailsFragment: Fragment() {
         setupOrderRv()
 
         binding.apply {
-            tvOrderId.text = "Pedido #${order.orderId}"
+            tvIDDoPedido.text = "Pedido #${order.orderId}"
 
             stepView.setSteps(
                 mutableListOf(
@@ -55,17 +55,17 @@ class OrderDetailsFragment: Fragment() {
             if(currentOrderState == 3) {
                 stepView.done(true)
             }
-            tvFullName.text = order.address.fullName
-            tvAddress.text = "${order.address.fullAddress} ${order.address.city} ${order.address.state}"
-            tvPhoneNumber.text = order.address.phone
-            tvTotalPrice.text = order.totalPrice.toString()
+            tvNomeCompleto.text = order.address.fullName
+            tvEndereO2.text = "${order.address.fullAddress} ${order.address.city} ${order.address.state}"
+            tvCelular.text = order.address.phone
+            tvPreOTotal.text = order.totalPrice.toString()
         }
 
         billingProductsAdapter.differ.submitList(order.products)
     }
 
     private fun setupOrderRv() {
-        binding.rvProducts.apply {
+        binding.rvProdutos.apply {
             adapter = billingProductsAdapter
             layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL,false)
             addItemDecoration(VerticalItemDecoration())

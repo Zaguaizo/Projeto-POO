@@ -15,11 +15,11 @@ class AddressAdapter: Adapter<AddressAdapter.AddressViewHolder>() {
     inner class AddressViewHolder(val binding: AddressRvItemBinding): ViewHolder(binding.root){
         fun bind(address: Address, isSelected: Boolean) {
             binding.apply {
-                buttonAddress.text = address.addressTitle
+                botaoEndereO.text = address.addressTitle
                 if(isSelected){
-                    buttonAddress.background = ColorDrawable(itemView.context.resources.getColor(R.color.dark_blue))
+                    botaoEndereO.background = ColorDrawable(itemView.context.resources.getColor(R.color.dark_blue))
                 }else{
-                    buttonAddress.background = ColorDrawable(itemView.context.resources.getColor(R.color.white))
+                    botaoEndereO.background = ColorDrawable(itemView.context.resources.getColor(R.color.white))
                 }
             }
         }
@@ -47,7 +47,7 @@ class AddressAdapter: Adapter<AddressAdapter.AddressViewHolder>() {
     override fun onBindViewHolder(holder: AddressViewHolder, position: Int) {
         val address = differ.currentList[position]
         holder.bind(address, selectedAddress == position)
-        holder.binding.buttonAddress.setOnClickListener{
+        holder.binding.botaoEndereO.setOnClickListener{
             if(selectedAddress >= 0)
                 notifyItemChanged(selectedAddress)
             selectedAddress = holder.adapterPosition

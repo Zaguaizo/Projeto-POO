@@ -19,11 +19,11 @@ class CartProductAdapter : RecyclerView.Adapter<CartProductAdapter.CartProductsV
 
         fun bind(cartProduct: CartProduct){
             binding.apply {
-                Glide.with(itemView).load(cartProduct.product.images[0]).into(imageCartProduct)
-                tvProductCartName.text = cartProduct.product.name
-                tvProductQuantity.text = cartProduct.quantity.toString()
+                Glide.with(itemView).load(cartProduct.product.images[0]).into(imagemProdutoDoCarrinho)
+                tvNomeDoProdutoDoCarrinho.text = cartProduct.product.name
+                tvQuantidadeProduto.text = cartProduct.quantity.toString()
                 val priceAfterOffer = cartProduct.product.offer.getProductPrice(cartProduct.product.price)
-                tvProductCartPrice.text =  "R$ ${String.format("%.2f",priceAfterOffer)}"
+                tvPreODoProdutoDoCarrinho.text =  "R$ ${String.format("%.2f",priceAfterOffer)}"
             }
         }
     }

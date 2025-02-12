@@ -51,7 +51,7 @@ class CartFragment: Fragment(R.layout.fragment_cart) {
             viewModel.productsPrice.collectLatest { price ->
                 price?.let{
                     totalPrice = it
-                    binding.tvTotalPrice.text = "R$ $price"
+                    binding.tvPreOTotal.text = "R$ $price"
                 }
             }
         }
@@ -70,12 +70,12 @@ class CartFragment: Fragment(R.layout.fragment_cart) {
             viewModel.changeQuantity(it,FirebaseCommon.QuantityChanging.DECREASE)
         }
 
-        binding.buttonCheckout.setOnClickListener{
+        binding.botaoCheckout.setOnClickListener{
             val action = CartFragmentDirections.actionCartFragmentToBillingFragment(totalPrice,cartAdapter.differ.currentList.toTypedArray(),true)
             findNavController().navigate(action)
         }
 
-        binding.imgCloseCart.setOnClickListener{
+        binding.imageFecharCarrinho.setOnClickListener{
             findNavController().navigateUp()
         }
         lifecycleScope.launchWhenStarted {
@@ -100,7 +100,7 @@ class CartFragment: Fragment(R.layout.fragment_cart) {
             viewModel.cartProducts.collectLatest{
                 when(it){
                     is Resource.Success ->{
-                        binding.progressbarCart.visibility = View.INVISIBLE
+                        binding.progressbarCarrinho.visibility = View.INVISIBLE
                         if(it.data!!.isEmpty()){
                             showEmptyCart()
                             hideOtherViews()
@@ -111,10 +111,10 @@ class CartFragment: Fragment(R.layout.fragment_cart) {
                         }
                     }
                     is Resource.Loading ->{
-                        binding.progressbarCart.visibility = View.VISIBLE
+                        binding.progressbarCarrinho.visibility = View.VISIBLE
                     }
                     is Resource.Error ->{
-                        binding.progressbarCart.visibility = View.INVISIBLE
+                        binding.progressbarCarrinho.visibility = View.INVISIBLE
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                     }
                     else -> Unit
@@ -125,34 +125,34 @@ class CartFragment: Fragment(R.layout.fragment_cart) {
 
     private fun showOtherViews() {
         binding.apply {
-            rvCart.visibility = View.VISIBLE
+            rvCarrinho.visibility = View.VISIBLE
             totalBoxContainer.visibility = View.VISIBLE
-            buttonCheckout.visibility = View.VISIBLE
+            botaoCheckout.visibility = View.VISIBLE
         }
     }
 
     private fun hideOtherViews() {
         binding.apply {
-            rvCart.visibility = View.GONE
+            rvCarrinho.visibility = View.GONE
             totalBoxContainer.visibility = View.GONE
-            buttonCheckout.visibility = View.GONE
+            botaoCheckout.visibility = View.GONE
         }
     }
 
     private fun hideEmptyCart() {
        binding.apply {
-           layoutCartEmpty.visibility = View.GONE
+           clCarrinhoVazio.visibility = View.GONE
        }
     }
 
     private fun showEmptyCart() {
         binding.apply {
-            layoutCartEmpty.visibility = View.VISIBLE
+            clCarrinhoVazio.visibility = View.VISIBLE
         }
     }
 
     private fun setupCartRv(){
-        binding.rvCart.apply {
+        binding.rvCarrinho.apply {
             layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
             adapter = cartAdapter
             addItemDecoration(VerticalItemDecoration())

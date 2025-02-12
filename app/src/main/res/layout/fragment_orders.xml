@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarAllOrders"
+        android:id="@+id/toolbarTodosOsPedidos"
         android:layout_width="0dp"
         android:layout_height="?actionBarSize"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
@@ -18,7 +18,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageCloseOrders"
+                android:id="@+id/imageFecharPedidos2"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:scaleType="centerInside"
@@ -37,7 +37,7 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/imageCloseOrders"
+                app:layout_constraintStart_toEndOf="@id/imageFecharPedidos2"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -58,17 +58,17 @@
         app:layout_constraintGuide_percent="0.96" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_all_orders"
+        android:id="@+id/rvTodosOsPedidos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarAllOrders"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarTodosOsPedidos"
         tools:listitem="@layout/order_item" />
 
     <ProgressBar
-        android:id="@+id/progressbar_all_orders"
+        android:id="@+id/progressbarTodosOsPedidos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:indeterminateTint="@color/gray"
@@ -79,7 +79,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_empty_orders"
+        android:id="@+id/tvVazio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"

@@ -28,7 +28,7 @@
                 android:indeterminateTint="@color/gray"/>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvSpecialProducts"
+                android:id="@+id/rvProdutosEspeciais"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -38,7 +38,7 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
-                android:id="@+id/bestDeals"
+                android:id="@+id/melhoresPreços"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -49,22 +49,22 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rvSpecialProducts"/>
+                app:layout_constraintTop_toBottomOf="@id/rvProdutosEspeciais"/>
 
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/RVBestDealsProducts"
+                android:id="@+id/rvProdutosMelhoresPreços"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintStart_toStartOf="@id/rvSpecialProducts"
+                app:layout_constraintStart_toStartOf="@id/rvProdutosEspeciais"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bestDeals"/>
+                app:layout_constraintTop_toBottomOf="@id/melhoresPreços"/>
 
 
             <TextView
-                android:id="@+id/bestProducts"
+                android:id="@+id/melhoresProdutos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -74,25 +74,25 @@
                 android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/rvSpecialProducts"
-                app:layout_constraintTop_toBottomOf="@id/RVBestDealsProducts"/>
+                app:layout_constraintStart_toStartOf="@id/rvProdutosEspeciais"
+                app:layout_constraintTop_toBottomOf="@id/rvProdutosMelhoresPreços"/>
 
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/RVBestProducts"
+                android:id="@+id/rvMelhoresProdutos2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bestProducts"
+                app:layout_constraintTop_toBottomOf="@id/melhoresProdutos"
                 android:layout_marginEnd="15dp"
                 android:overScrollMode="never"/>
 
 
 
             <ProgressBar
-                android:id="@+id/bestProductsProgressBar"
+                android:id="@+id/progressbarMelhoresProdutos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"

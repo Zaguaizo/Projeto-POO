@@ -44,11 +44,11 @@ class ProductDetailsFragment: Fragment() {
 
         setupViewpager()
 
-        binding.imgClose.setOnClickListener{
+        binding.imgFechar.setOnClickListener{
             findNavController().navigateUp()
         }
 
-        binding.buttonAddToCart.setOnClickListener{
+        binding.buttonAdicionarAoCarrinho.setOnClickListener{
             viewModel.addUpdateProductInCart(CartProduct(product,1))
         }
 
@@ -59,11 +59,11 @@ class ProductDetailsFragment: Fragment() {
 
                     }
                     is Resource.Success ->{
-                        binding.buttonAddToCart.setBackgroundColor(resources.getColor(R.color.teal_200))
+                        binding.buttonAdicionarAoCarrinho.setBackgroundColor(resources.getColor(R.color.teal_200))
                         Toast.makeText(requireContext(), "Produto adicionado ao carrinho", Toast.LENGTH_SHORT).show()
                     }
                     is Resource.Error ->{
-                        binding.buttonAddToCart.setBackgroundColor(resources.getColor(R.color.light_red))
+                        binding.buttonAdicionarAoCarrinho.setBackgroundColor(resources.getColor(R.color.light_red))
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                     }
                     else -> Unit
@@ -72,9 +72,9 @@ class ProductDetailsFragment: Fragment() {
         }
 
         binding.apply {
-            tvProductName.text = product.name
-            tvProductPrice.text = "R$ ${product.price}"
-            tvProductDescription.text = product.description
+            tvNomeDoProduto.text = product.name
+            tvPreODoProduto.text = "R$ ${product.price}"
+            tvDescriAoDoProduto.text = product.description
         }
 
         viewPagerAdapter.differ.submitList(product.images)
@@ -82,7 +82,7 @@ class ProductDetailsFragment: Fragment() {
 
     private fun setupViewpager() {
         binding.apply {
-            viewPagerProductsImg.adapter = viewPagerAdapter
+            viewPagerImagensProdutos.adapter = viewPagerAdapter
         }
     }
 }

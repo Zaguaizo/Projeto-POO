@@ -25,7 +25,7 @@ class IntroFragment: Fragment(R.layout.fragment_intro) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonCadastro.setOnClickListener{
+        binding.btnCadastro.setOnClickListener{
             findNavController().navigate(R.id.action_introFragment_to_registerFragment)
         }
         binding.btnLogin.setOnClickListener{

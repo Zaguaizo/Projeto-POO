@@ -12,7 +12,7 @@
         android:layout_height="88dp">
 
         <ImageView
-            android:id="@+id/img_best_deal"
+            android:id="@+id/imgMelhorPreço"
             android:layout_width="64dp"
             android:layout_height="64dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -21,12 +21,12 @@
             android:layout_marginTop="10dp" />
 
         <TextView
-            android:id="@+id/tv_deal_product_name"
+            android:id="@+id/tvNomeDaOferta"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:text="Água"
-            app:layout_constraintStart_toEndOf="@id/img_best_deal"
-            app:layout_constraintTop_toTopOf="@id/img_best_deal"
+            app:layout_constraintStart_toEndOf="@id/imgMelhorPreço"
+            app:layout_constraintTop_toTopOf="@id/imgMelhorPreço"
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
             android:fontFamily="sans-serif-thin"
@@ -35,12 +35,12 @@
             android:textSize="9sp"/>
 
         <TextView
-            android:id="@+id/tv_old_price"
+            android:id="@+id/tvPreçoAntigo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="R$70"
-            app:layout_constraintTop_toBottomOf="@id/tv_deal_product_name"
-            app:layout_constraintStart_toEndOf="@id/tv_new_price"
+            app:layout_constraintTop_toBottomOf="@id/tvNomeDaOferta"
+            app:layout_constraintStart_toEndOf="@id/tvNovoPreço"
             android:textColor="@color/gray"
             android:textSize="12sp"
             android:fontFamily="sans-serif-light"
@@ -48,19 +48,19 @@
             />
 
         <TextView
-            android:id="@+id/tv_new_price"
+            android:id="@+id/tvNovoPreço"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="R$50"
-            app:layout_constraintStart_toStartOf="@id/tv_deal_product_name"
-            app:layout_constraintTop_toBottomOf="@id/tv_deal_product_name"
+            app:layout_constraintStart_toStartOf="@id/tvNomeDaOferta"
+            app:layout_constraintTop_toBottomOf="@id/tvNomeDaOferta"
 
             android:textColor="@color/black"
             android:textSize="12sp"
             android:fontFamily="sans-serif-medium"/>
 
         <Button
-            android:id="@+id/btn_see_product"
+            android:id="@+id/botaoProduto"
             android:layout_width="83dp"
             android:layout_height="28dp"
             android:background="@drawable/blue_background"
@@ -69,8 +69,8 @@
             android:textColor="@color/white"
             android:textSize="10dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/tv_deal_product_name"
-            app:layout_constraintTop_toTopOf="@id/tv_deal_product_name"
+            app:layout_constraintStart_toEndOf="@id/tvNomeDaOferta"
+            app:layout_constraintTop_toTopOf="@id/tvNomeDaOferta"
             android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginStart="20dp"

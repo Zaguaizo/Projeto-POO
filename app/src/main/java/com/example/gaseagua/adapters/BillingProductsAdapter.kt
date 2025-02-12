@@ -19,12 +19,12 @@ class BillingProductsAdapter: Adapter<BillingProductsAdapter.BillingProductsView
 
         fun bind(billingProduct: CartProduct) {
             binding.apply {
-                Glide.with(itemView).load(billingProduct.product.images[0]).into(imageCartProduct)
-                tvProductCartName.text = billingProduct.product.name
-                tvBillingProductQuantity.text = billingProduct.quantity.toString()
+                Glide.with(itemView).load(billingProduct.product.images[0]).into(imagemProdutoDoCarrinho)
+                tvNomeDoProdutoDoCarrinho.text = billingProduct.product.name
+                tvQuantidade.text = billingProduct.quantity.toString()
 
                 val priceAfterPercentage = billingProduct.product.offer.getProductPrice(billingProduct.product.price)
-                tvProductCartPrice.text = "$ ${String.format("%.2f", priceAfterPercentage)}"
+                tvPreODoProdutoDoCarrinho.text = "$ ${String.format("%.2f", priceAfterPercentage)}"
             }
         }
 

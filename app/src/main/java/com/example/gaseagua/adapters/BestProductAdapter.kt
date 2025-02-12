@@ -20,15 +20,15 @@ class BestProductAdapter: RecyclerView.Adapter<BestProductAdapter.BestProductVie
             binding.apply {
 
                 val priceAfterOffer = product.offer.getProductPrice(product.price)
-                tvNewPrice.text = "R$ ${String.format("%.2f",priceAfterOffer)}"
-                tvPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+                tvNovoPreO.text = "R$ ${String.format("%.2f",priceAfterOffer)}"
+                tvPreO.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
 
                 if(product.offer == null)
-                    tvNewPrice.visibility = View.INVISIBLE
+                   tvNovoPreO.visibility = View.INVISIBLE
 
-                Glide.with(itemView).load(product.images[0]).into(imgProduct)
-                tvPrice.text = "R$ ${product.price}"
-                tvName.text = product.name
+                Glide.with(itemView).load(product.images[0]).into(imagemProduto)
+                tvPreO.text = "R$ ${product.price}"
+                tvNome2.text = product.name
             }
         }
     }

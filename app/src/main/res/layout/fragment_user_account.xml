@@ -64,7 +64,7 @@
             />
 
         <ImageView
-            android:id="@+id/imageUser"
+            android:id="@+id/imageUsuario"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginTop="150dp"
@@ -82,8 +82,8 @@
             android:background="@drawable/settings_items_background"
             android:backgroundTint="#5E85F9"
             android:src="@drawable/ic_edit"
-            app:layout_constraintBottom_toBottomOf="@id/imageUser"
-            app:layout_constraintEnd_toEndOf="@id/imageUser" />
+            app:layout_constraintBottom_toBottomOf="@id/imageUsuario"
+            app:layout_constraintEnd_toEndOf="@id/imageUsuario" />
 
 
         <EditText
@@ -99,7 +99,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
             app:layout_constraintStart_toStartOf="@+id/leftGuideline"
-            app:layout_constraintTop_toBottomOf="@+id/imageUser" />
+            app:layout_constraintTop_toBottomOf="@+id/imageUsuario" />
 
         <EditText
             android:id="@+id/edLastName"
@@ -134,7 +134,7 @@
 
 
         <Button
-            android:id="@+id/buttonSave"
+            android:id="@+id/botaoSalvar"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:background="@drawable/backgroundgaseagua"

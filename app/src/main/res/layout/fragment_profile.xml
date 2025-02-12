@@ -15,7 +15,7 @@
         android:layout_height="match_parent">
 
         <ProgressBar
-            android:id="@+id/progressbarSettings"
+            android:id="@+id/progressbarConfiguraçoes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -33,7 +33,7 @@
             tools:layout_editor_absoluteY="0dp">
 
             <TextView
-                android:id="@+id/tvSettings"
+                android:id="@+id/tvConfiguraçoes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="150dp"
@@ -48,10 +48,10 @@
                 android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@+id/tvSettings">
+                app:layout_constraintTop_toBottomOf="@+id/tvConfiguraçoes">
 
                 <ImageView
-                    android:id="@+id/imageUser"
+                    android:id="@+id/imageUsuario"
                     android:layout_width="43dp"
                     android:layout_height="43dp"
                     android:src="@color/black"
@@ -60,32 +60,32 @@
 
 
                 <TextView
-                    android:id="@+id/tvUserName"
+                    android:id="@+id/tvNome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="3dp"
                     android:text="Nome"
-                    app:layout_constraintStart_toEndOf="@id/imageUser"
-                    app:layout_constraintTop_toTopOf="@+id/imageUser" />
+                    app:layout_constraintStart_toEndOf="@id/imageUsuario"
+                    app:layout_constraintTop_toTopOf="@+id/imageUsuario" />
 
 
                 <TextView
-                    android:id="@+id/tv_edit_personal_details"
+                    android:id="@+id/tvEditarPerfil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Perfil"
-                    app:layout_constraintStart_toStartOf="@+id/tvUserName"
-                    app:layout_constraintTop_toBottomOf="@id/tvUserName" />
+                    app:layout_constraintStart_toStartOf="@+id/tvNome"
+                    app:layout_constraintTop_toBottomOf="@id/tvNome" />
 
                 <ImageView
                     android:id="@+id/arrow"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:src="@drawable/baseline_arrow_forward_ios_24"
-                    app:layout_constraintBottom_toBottomOf="@id/tv_edit_personal_details"
+                    app:layout_constraintBottom_toBottomOf="@id/tvEditarPerfil"
                     app:layout_constraintEnd_toEndOf="@id/constraintProfile"
-                    app:layout_constraintTop_toTopOf="@id/tvUserName"
+                    app:layout_constraintTop_toTopOf="@id/tvNome"
                     app:tint="@color/g_blue_gray200" />
 
 
@@ -118,7 +118,7 @@
                         app:tint="@color/white" />
 
                     <TextView
-                        android:id="@+id/tvAllOrders"
+                        android:id="@+id/tvTodosOsPedidos"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -138,7 +138,7 @@
 
 
                 <LinearLayout
-                    android:id="@+id/linearBilling"
+                    android:id="@+id/linearPagamento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -154,7 +154,7 @@
                         app:tint="@color/white" />
 
                     <TextView
-                        android:id="@+id/tvBilling"
+                        android:id="@+id/tvPagamento"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -209,34 +209,6 @@
                         app:tint="@color/g_blue_gray200" />
                 </LinearLayout>
             </LinearLayout>
-
-
-            <TextView
-                android:id="@+id/tvNotifications"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text=""
-                android:textColor="@color/gray"
-                android:textStyle="normal"
-                app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@id/linearOrders" />
-
-            <LinearLayout
-                android:id="@+id/linearNotifications"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/search_box_background"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="@id/guideline2"
-                app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@id/tvNotifications">
-
-
-            </LinearLayout>
-
-
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline1"
                 android:layout_width="wrap_content"

@@ -15,14 +15,14 @@ class BestDealsAdapter: RecyclerView.Adapter<BestDealsAdapter.BestDealsViewHolde
     inner class BestDealsViewHolder(private val binding: BestDealsRvItemBinding): ViewHolder(binding.root){
         fun bind(product: Product) {
             binding.apply {
-                Glide.with(itemView).load(product.images[0]).into(imgBestDeal)
+                Glide.with(itemView).load(product.images[0]).into(imgMelhorPreO)
                 product.offer?.let{
                     val remainingPricePercentage = 1f - it
                     val priceAfterOffer = remainingPricePercentage * product.price
-                    tvNewPrice.text = "R$ ${String.format("%.2f",priceAfterOffer)}"
+                    tvNovoPreO.text = "R$ ${String.format("%.2f",priceAfterOffer)}"
                 }
-                tvOldPrice.text = "R$ ${product.price}"
-                tvDealProductName.text = product.name
+                tvPreOAntigo.text = "R$ ${product.price}"
+                tvNomeDaOferta.text = product.name
             }
         }
     }

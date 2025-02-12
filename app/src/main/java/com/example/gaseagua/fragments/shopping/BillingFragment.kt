@@ -64,32 +64,32 @@ class BillingFragment: Fragment() {
 
         if(!args.payment){
             binding.apply {
-                buttonPlaceOrder.visibility = View.INVISIBLE
+                botaoFazerPedido.visibility = View.INVISIBLE
                 totalBoxContainer.visibility = View.INVISIBLE
                 middleLine.visibility = View.INVISIBLE
                 bottomLine.visibility = View.INVISIBLE
             }
         }
 
-        binding.imageAddAddress.setOnClickListener {
+        binding.imageAdicionarEndereO.setOnClickListener {
             findNavController().navigate(R.id.action_billingFragment_to_addressFragment)
         }
 
-        binding.imageCloseBilling.setOnClickListener{
+        binding.imageFechar.setOnClickListener{
             findNavController().navigateUp()
         }
         lifecycleScope.launchWhenStarted {
             billingViewModel.address.collectLatest {
                 when(it){
                     is Resource.Loading ->{
-                        binding.progressbarAddress.visibility = View.VISIBLE
+                        binding.progressbarEndereO.visibility = View.VISIBLE
                     }
                     is Resource.Success ->{
                         addressAdapter.differ.submitList(it.data)
-                        binding.progressbarAddress.visibility = View.GONE
+                        binding.progressbarEndereO.visibility = View.GONE
                     }
                     is Resource.Error ->{
-                        binding.progressbarAddress.visibility = View.GONE
+                        binding.progressbarEndereO.visibility = View.GONE
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                     }
                     else -> Unit
@@ -116,7 +116,7 @@ class BillingFragment: Fragment() {
         }
 
         billingProductsAdapter.differ.submitList(products)
-        binding.tvTotalPrice.text = "R$ $totalPrice"
+        binding.tvPreOTotal.text = "R$ $totalPrice"
         addressAdapter.onClick = {
             selectedAddress = it
             if (!args.payment) {
@@ -124,7 +124,7 @@ class BillingFragment: Fragment() {
                 findNavController().navigate(R.id.action_billingFragment_to_addressFragment, b)
             }
         }
-        binding.buttonPlaceOrder.setOnClickListener{
+        binding.botaoFazerPedido.setOnClickListener{
             if(selectedAddress == null){
                 Toast.makeText(requireContext(), "Selecione um endereço", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -156,14 +156,14 @@ class BillingFragment: Fragment() {
     }
 
     private fun setupAddressRv() {
-        binding.rvAddress.apply {
+        binding.rvEndereO.apply {
             layoutManager = LinearLayoutManager(requireContext(),RecyclerView.HORIZONTAL,false)
             adapter = addressAdapter
         }
     }
 
     private fun setupBillingProductsRv() {
-        binding.rvProducts.apply {
+        binding.rvProdutos.apply {
             layoutManager = LinearLayoutManager(requireContext(),RecyclerView.HORIZONTAL,false)
             adapter = billingProductsAdapter
         }

@@ -49,7 +49,7 @@ class ProfileFragment: Fragment() {
             findNavController().navigate(R.id.action_profileFragment_to_allOrdersFragment)
         }
 
-        binding.linearBilling.setOnClickListener{
+        binding.linearPagamento.setOnClickListener{
             val action = ProfileFragmentDirections.actionProfileFragmentToBillingFragment(
                 0f,
                 emptyArray(),
@@ -68,19 +68,19 @@ class ProfileFragment: Fragment() {
             viewModel.user.collectLatest {
                 when (it) {
                     is Resource.Loading -> {
-                        binding.progressbarSettings.visibility = View.VISIBLE
+                        binding.progressbarConfiguraOes.visibility = View.VISIBLE
                     }
                     is Resource.Success -> {
-                        binding.progressbarSettings.visibility = View.GONE
+                        binding.progressbarConfiguraOes.visibility = View.GONE
                         Glide.with(requireView()).load(it.data!!.imagePath).error(
                             ColorDrawable(
                             Color.BLACK)
-                        ).into(binding.imageUser)
-                        binding.tvUserName.text = "${it.data.firstName} ${it.data.lastName}"
+                        ).into(binding.imageUsuario)
+                        binding.tvNome.text = "${it.data.firstName} ${it.data.lastName}"
                     }
                     is Resource.Error -> {
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
-                        binding.progressbarSettings.visibility = View.GONE
+                        binding.progressbarConfiguraOes.visibility = View.GONE
                     }
                     else -> Unit
                 }

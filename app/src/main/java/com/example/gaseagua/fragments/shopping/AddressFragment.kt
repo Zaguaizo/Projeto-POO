@@ -32,10 +32,10 @@ class AddressFragment: Fragment() {
             viewModel.addNewAddress.collectLatest{
                 when(it){
                     is Resource.Loading ->{
-                        binding.progressbarAddress.visibility = View.VISIBLE
+                        binding.progressbarEndereO.visibility = View.VISIBLE
                     }
                     is Resource.Success ->{
-                        binding.progressbarAddress.visibility = View.INVISIBLE
+                        binding.progressbarEndereO.visibility = View.INVISIBLE
                         findNavController().navigateUp()
                     }
                     is Resource.Error ->{
@@ -68,26 +68,26 @@ class AddressFragment: Fragment() {
 
         val address = args.address
         if(address == null){
-            binding.buttonDelelte.visibility = View.GONE
+            binding.botaoDeletar.visibility = View.GONE
         }else{
             binding.apply {
-                edAddressTitle.setText(address.addressTitle)
-                edFullName.setText(address.fullName)
-                edState.setText(address.fullAddress)
-                edPhone.setText(address.phone)
-                edCity.setText(address.city)
-                edState.setText(address.state)
+                editTituloEndereO.setText(address.addressTitle)
+                editNomeCompleto.setText(address.fullName)
+                editEndereOCompleto.setText(address.fullAddress)
+                editCelular.setText(address.phone)
+                editCidade.setText(address.city)
+                editEstado.setText(address.state)
             }
         }
 
         binding.apply {
-            buttonSave.setOnClickListener{
-                val addressTitle = edAddressTitle.text.toString()
-                val fullName = edFullName.text.toString()
-                val fullAddress = edFullAddress.text.toString()
-                val phone = edPhone.text.toString()
-                val city = edCity.text.toString()
-                val state = edState.text.toString()
+            botaoSalvar.setOnClickListener{
+                val addressTitle = editTituloEndereO.text.toString()
+                val fullName = editNomeCompleto.text.toString()
+                val fullAddress = editEndereOCompleto.text.toString()
+                val phone = editCelular.text.toString()
+                val city = editCidade.text.toString()
+                val state = editEstado.text.toString()
                 val address = Address(addressTitle, fullName, fullAddress, phone, city, state)
 
                 viewModel.addAddress(address)

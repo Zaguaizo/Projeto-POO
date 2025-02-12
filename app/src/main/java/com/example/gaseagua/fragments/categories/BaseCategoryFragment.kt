@@ -44,7 +44,7 @@ open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
             findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
         }
 
-        binding.rvOffer.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+        binding.rvOferta.addOnScrollListener(object : RecyclerView.OnScrollListener(){
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
 
@@ -63,19 +63,19 @@ open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
     }
 
     fun showOfferLoading(){
-        binding.offerProductsProgressBar.visibility = View.VISIBLE
+        binding.progressBarProdutosEmOferta.visibility = View.VISIBLE
     }
 
     fun hideOfferLoading(){
-        binding.offerProductsProgressBar.visibility = View.GONE
+        binding.progressBarProdutosEmOferta.visibility = View.GONE
     }
 
     fun showBestProductsLoading(){
-        binding.bestProductsProgressBar.visibility = View.VISIBLE
+        binding.progressbarMelhoresProdutos.visibility = View.VISIBLE
     }
 
     fun hideBestProductsLoading(){
-        binding.bestProductsProgressBar.visibility = View.GONE
+        binding.progressbarMelhoresProdutos.visibility = View.GONE
     }
 
     open fun onOfferPagingRequest(){
@@ -87,14 +87,14 @@ open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
     }
 
     private fun setupBestProductsRv() {
-        binding.rvBestProducts.apply {
+        binding.rvMelhoresProdutos.apply {
             layoutManager = GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL,false)
             adapter = bestProductsAdapter
         }
     }
 
     private fun setupOfferRv() {
-        binding.rvBestProducts.apply{
+        binding.rvOferta.apply{
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,false)
             adapter = offerAdapter
         }

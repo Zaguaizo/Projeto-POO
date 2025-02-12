@@ -41,11 +41,11 @@ class RegisterFragment: Fragment() {
         binding.apply {
             btnRegistrar.setOnClickListener {
                 val user = User(
-                    editTextNome.text.toString().trim(),
-                    editTextSobrenome.text.toString().trim(),
-                    editTextEmail.text.toString().trim()
+                    editNome.text.toString().trim(),
+                    editSobrenome.text.toString().trim(),
+                    editEmail.text.toString().trim()
                 )
-                val password = editTextSenha.text.toString()
+                val password = editSenha.text.toString()
                 viewModel.createAccountWithEmailAndPassword(user, password)
             }
         }
@@ -73,7 +73,7 @@ class RegisterFragment: Fragment() {
             viewModel.validation.collect{ validation ->
                 if(validation.email is RegisterValidation.Failed){
                     withContext(Dispatchers.Main){
-                        binding.editTextEmail.apply {
+                        binding.editEmail.apply {
                             requestFocus()
                             error = validation.email.message
                         }
@@ -81,7 +81,7 @@ class RegisterFragment: Fragment() {
                 }
                 if(validation.password is RegisterValidation.Failed){
                     withContext(Dispatchers.Main){
-                        binding.editTextSenha.apply {
+                        binding.editSenha.apply {
                             requestFocus()
                             error = validation.password.message
                         }
@@ -89,7 +89,7 @@ class RegisterFragment: Fragment() {
                 }
                 if(validation.nome is RegisterValidation.Failed){
                     withContext(Dispatchers.Main){
-                        binding.editTextNome.apply {
+                        binding.editNome.apply {
                             requestFocus()
                             error = validation.nome.message
                         }
@@ -97,7 +97,7 @@ class RegisterFragment: Fragment() {
                 }
                 if(validation.sobrenome is RegisterValidation.Failed){
                     withContext(Dispatchers.Main){
-                        binding.editTextSobrenome.apply {
+                        binding.editSobrenome.apply {
                             requestFocus()
                             error = validation.sobrenome.message
                         }
